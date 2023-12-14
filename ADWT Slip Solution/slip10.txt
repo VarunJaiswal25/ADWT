@@ -1,0 +1,52 @@
+slip10
+1. <!DOCTYPE html>
+<html>
+<head>
+    <title>CSS Transition</title>
+
+    <style>
+        h1 {
+            color: #640bd1;
+            text-align: center;
+        }
+
+        div.one {
+            height: 150px;
+            width: 150px;
+            border: 1px dashed rgb(218, 66, 66);
+            margin: 0 auto;
+            background: #474eda;
+            transition-delay: 2s;
+        }
+
+        div.one:hover {
+            height: 300px;
+            width: 300px;
+            background:red;
+        }
+    </style>
+
+</head>
+
+<body>
+    <h1>Transition</h1>
+
+    <div class="one">
+    </div>
+
+</body>
+</html>
+
+2.
+db.custonlineshope.insert({name:"A",city:"Nashik",billamt:"60000",Brand:[{ name:"X" ,pname:"AC",warranty:"10 years",dateofPurchase:"15/8/2023",rating:5}]}
+db.custonlineshope.insert({ name: "B", city: "Pune", billamt: "40000", Brand: [{ name: "y", pname: "TV", warranty: "5 years", dateofPurchase: "1/10/2023", rating: 4 }] } )
+db.custonlineshope.insert({ name: "C", city: "Pune", billamt: "55000", Brand: [{ name: "H", pname: "Washing machine", warranty: "8 years", dateofPurchase: "8/1/2023", rating: 3 }] } )
+db.custonlineshope.insert({ name: "D", city: "Mumbai", billamt: "50000", Brand: [{ name: "A", pname: "Samart Phone", warranty: "1 years", dateofPurchase: "8/1/2023", rating: 5 }] })
+a. List the names of product whose warranty period is one year
+db.custonlineshope.find({"Brand.warranty":"1 years"})
+b.List the customers has done purchase on "15/08/2023".
+db.custonlineshope.find({"Brand.dateofPurchase":"15/8/2023"})
+c.Display the names of products with brand which have highest rating.
+db.custonlineshope.find({},{"Brand.pname":1,"Brand.rating":1}).sort({"Brand.rating":-1}).limit(1)
+d. Display customers who stay in city and billamt >50000.
+db.custonlineshope.find({$and:[{city:"Nashik"},{billamt:{$gt:50000}}]}) OR  db.custonlineshope.find({ "city": "Nashik", "billamt": { $gt: 50000 } })

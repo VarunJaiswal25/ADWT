@@ -1,0 +1,52 @@
+slip7
+1.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>3D Text Effect</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+
+        .threeD-text {
+            font-size: 36px;
+            font-weight: bold;
+            color: #3498db;
+            position: relative;
+            transition: transform 0.7s ease-in-out;
+        }
+
+        .threeD-text:hover {
+            transform: perspective(400px) rotateX(60deg);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="threeD-text">Hover over me</div>
+
+</body>
+</html>
+
+2.
+db.custinfo.insert({"first name": "Amit","last name":"Dev","DOB":"22-12;1974","Branch":"Satpur","Account": [{"Type": "saving","open date": "12-2-2021"}],"Transaction":[{ "Transaction Type": "Withdraw","date": "23-2-2021","Amount": 500}],"Services":[{"type":"loan","amount":"200000","duration":"5 years"}]})
+db.custinfo.insert({"first name": "Sumit","last name":"Rai","DOB":"1-6-2002","Branch":"Nashik","Account": [{"Type": "saving","open date": "20-2-2021"}],"Transaction":[{ "Transaction Type": "Withdraw","date": "23-2-2021","Amount": 500},{ "Transaction Type": "deposite","date": "29-3-2021","Amount": 5000}],"Services":[{"type":"loan","amount":"150000","duration":"4 years"}]})
+db.custinfo.insert({"first name": "Sakshi","last name":"Patil","DOB":"2-7-1996","Branch":"Satpur","Account": [{"Type": "current","open date": "20-12-2020"}],"Transaction":[{ "Transaction Type": "Withdraw","date": "28-5-2023","Amount": 23400},{ "Transaction Type": "deposite","date": "20-8-2023","Amount": 20000}],"Services":[{"type":"Policy","amount":"10000","duration":"10 years"}]})
+db.custinfo.insert({"first name": "Subhash","last name":"Dev","DOB":"22-12-1974","Branch":"Nashik","Account": [{"Type": "current","open date": "12-12-2021"}],"Transaction":[{ "Transaction Type": "Withdraw","date": "2-6-2022","Amount": 500}],"Services":[{"type":"Cradit card","amount":"80000","duration":"1 years"}]})
+a. List names of all customers whose first name starts with a "S”
+db.custinfo.find({ "first name": /^S/ })
+b. List all customers who has open an account on 1/1/2020 in 
+db.custinfo.find({ "Account.open date": "1-1-2020" })
+c. List the names customers where acctype="Saving" 
+db.custinfo.find({ "Account.Type": "saving" }, { "first name": 1, "last name": 1 })
+d. Count total no. of loan account holder of ...branch
+db.custinfo.countDocuments({"Services.type":"loan"},{"Branch":"Nashik"})
+OR
+db.custinfo.find({"Services.type":"loan"},{"Branch":"Nashik"}).count()

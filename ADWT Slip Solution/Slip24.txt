@@ -1,0 +1,75 @@
+Slip24
+1.
+<!doctype html>
+<html>
+    <body>
+        <h1>Input Type Example</h1>
+        <label for="date">Date:</label>
+        <input type="date"><br>
+        <label for="datetime">DateTime:</label>
+        <input type="datetime"><br>
+        <label for="datetime-local">Datetime-local</label>
+        <input type="datetime-local"><br>
+        <label for="month">Month:</label>
+        <input type="month"><br>
+        <label for="time">Time:</label>
+        <input type="Time"><br>
+        <label for="week">Week:</label>
+        <input type="week"><br>
+        <button>Submit</button>
+        
+    </body>
+</html>
+2.
+CREATE (:Book {title: 'Book1'})
+       CREATE (:Book {title: 'Book2'})
+      CREATE (:Student {name: 'S1'})
+      CREATE (:Student {name: 'S2'})
+CREATE (:BookType {name: 'Text'})
+CREATE (:BookType {name: 'Reference'})
+CREATE (:BookType {name: 'Bibliography'})
+
+MATCH(s:Student{name:'S1'})
+MATCH(b:Book)
+CREATE(s)-[:BOUGHT]->(b)
+MATCH(s:Student{name:'S2'})
+MATCH(b:Book)
+CREATE(s)-[:BOUGHT]->(b)
+MATCH(s:Student{name:'S1'})
+MATCH(b:Book{title:'Book1'})
+CREATE(s)-[:RECOMMENDED]->(b)
+MATCH(s:Student{name:'S2'})
+MATCH(b:Book{title:'Book1'})
+CREATE(s)-[:RECOMMENDED]->(b)
+MATCH(b:Book{title:'Book1'})
+MATCH(bt:BookType {name: 'Text'})
+CREATE(b)-[:TYPE_OF]->(bt)
+MATCH(b:Book{title:'Book2'})
+MATCH(bt:BookType {name: 'Reference'})
+CREATE(b)-[:TYPE_OF]->(bt)
+MATCH(b:Book{title:'Book2'})
+MATCH(bt:BookType {name: 'Bibliography'})
+CREATE(b)-[:TYPE_OF]->(bt)
+1.List the books of type “text” [3]
+=>MATCH (b:Book)-[:TYPE_OF]->(bt:BookType {name:'Text'})
+RETURN b.title
+Ans="Book1"
+2.List the name of student who bought a text and reference types books.[3]
+MATCH (s:Student)-[:BOUGHT]->(b:Book)-[:TYPE_OF]->(t:BookType)
+WHERE t.name IN ['Text', 'Reference']
+RETURN DISTINCT s.name
+Ans="S2"
+    "S1"
+3.List the most recommended book type.[4]
+=>MATCH (b:Book)<-[:RECOMMENDED]-(s:Student)
+WITH b, COUNT(s) AS recommendations
+MATCH (book)-[:TYPE_OF]->(t:BookType)
+RETURN t.name, SUM(recommendations) AS totalRecommendations
+ORDER BY totalRecommendations DESC
+LIMIT 1
+Ans="Text"	2
+4.List the student who buy the more than one type of book [4]
+=>MATCH (s:Student)-[:BOUGHT]->(b:Book)-[:TYPE_OF]->(t:BookType)
+WITH s, COUNT(DISTINCT t) AS numTypes
+WHERE numTypes > 1
+RETURN s.name

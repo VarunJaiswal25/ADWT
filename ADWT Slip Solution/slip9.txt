@@ -1,0 +1,36 @@
+slip9
+1.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF=8">
+<meta name="viewport " content="width-device-width,inital-scale=1.0">
+<title>HTML5 Input Types</title>
+</head>
+<body>
+<h1>HTML 5 Input Types</h1>
+<!-- Date Time Input-->
+<lable for="datetime">Date and Time:</lable>
+<input type="datetime-local" id="datetime"><br><br>
+<!--Email Input-->
+<label for="email">Email:</label>
+<input type="email" id ="email" name="email"><br><br>
+<!--Submit Button-->
+<label for="search">search:</label>
+<input type="search" id="search" name="search"><br><br>
+<!--submit Button-->
+<input type="submit"  value="submit">
+</body>
+</html>
+2. db.custloaninfo.insert({"name": "Darshan","Address":"ABC","DOB":"3-2-2002","City":"Pimpri","Loan": [{"Type": "A loan","amount":200000,"premium":20000},{"Type": " B loan","amount":500000,"premium":40000}]})
+db.custloaninfo.insert({"name": "Mr.Patil","Address":"XYZ","DOB":"23-5-1999","City":"Nashik","Loan": [{"Type": "A loan","amount":90000,"premium":1000}]})
+db.custloaninfo.insert({"name": "Mr.Patil","Address":"XYZ","DOB":"23-5-1999","City":"Nashik","Loan": [{"Type": "A loan","amount":90000,"premium":1000},{"Type": "y loan","amount":2000000,"premium":25000}]})
+db.custloaninfo.insert({"name": "Divya","Address":"aaa","DOB":"2-5-1998","City":"Pimpri","Loan": [{"Type": "A loan","amount":90000,"premium":1000},{"Type": "y loan","amount":600000,"premium":2500}]})
+a. List all customers whose name starts with 'D' character
+db.custloaninfo.find({"name":/^D/},{"name":1})
+b. List the names of customer in descending order who has taken a loan from Pimpri city.
+db.custloaninfo.find({ "City": "Pimpri" }).sort({ "name": -1 })
+c. Display customer details having maximum loan amount.
+db.custloaninfo.find().sort({ "Loan.amount": -1 }).limit(1) 
+d. Update the address of customer whose name is "Mr. Patil" and loan_amt is greater than 100000.
+db.custloaninfo.updateMany( { "name": "Mr.Patil", "Loan.amount": { $gt: 100000 } }, { $set: { "Address": "New Address" } } )

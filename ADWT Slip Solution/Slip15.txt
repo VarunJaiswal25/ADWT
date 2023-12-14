@@ -1,0 +1,243 @@
+Slip15
+1.
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <!--<meta name="viewport" content="width=device-width, initial-scale=1">-->
+        <title>Bootstrap demo</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+        
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" />
+    <style >
+    .container {
+    background-color:#879191
+    }
+    
+    </style>
+        
+    </head>
+    <body>
+        <div class="container text center">
+            <div class="col-lg-10">
+                <h3 align="center" class="mt-5 mb-5 pt-2">Registration Form</h3><!--p=padding t=top b=bottom m=margin-->
+                <form class="was-validatedxx" action="/action_page.php" ><!--validation -->
+                    
+                    <div class="input-group">
+                    <label class="form-label col-lg-2" for="firstName">
+                        First Name &nbsp;&nbsp;<!--non breaking space-->
+                    </label>
+                        <span class="input-group-text"><i class="fa fa-user"></i> </span>
+                        <input
+                        id="firstName"
+                        type="text"
+                        class="form-control"
+                        placeholder="Firstname"
+                        />
+                        
+                    </div>
+                    <div class="clear-fix">&nbsp;</div><!--cerate space between two text box-->
+                    
+                    <div class="input-group">
+                    <label class="form-label col-lg-2" for="lastName">
+                        Last Name &nbsp;&nbsp;
+                    </label>
+                        <span class="input-group-text"><i class="fa fa-user"></i> </span>
+                        <input
+                        id="lastName"
+                        type="text"
+                        class="form-control"
+                        placeholder="Last Name"
+                        />                      
+                    </div>
+                    <div class="clear-fix">&nbsp;</div>
+                    <div class="input-group">
+                    <label class="form-label col-lg-2" for="dept">
+                        Department/Office &nbsp;&nbsp;
+                    </label>
+                        <span class="input-group-text"><i class="fa fa-list"></i> </span>
+                        <select class="form-control" id="dept"> 
+                        <option value="">Select your department </option>
+                        <option value="arts">Arts </option>
+                        <option value="commerce">Commerce </option>
+                        <option value="science">science </option>
+                        
+                        </select>
+                    </div>
+                    <div class="clear-fix">&nbsp;</div>
+                    <div class="input-group">
+                    <label class="form-label col-lg-2" for="username">
+                        Username &nbsp;&nbsp;
+                    </label>
+                        <span class="input-group-text"><i class="fa fa-user"></i> </span>
+                        <input
+                        id="username"
+                        type="text"
+                        class="form-control"
+                        placeholder="User Name"
+                        />          
+                        
+                        </select>
+                    </div>
+                    
+                    <div class="clear-fix">&nbsp;</div>
+                    <div class="input-group">
+                    <label class="form-label col-lg-2" for="password">
+                        Password &nbsp;&nbsp;
+                    </label>
+                        <span class="input-group-text"><i class="fa fa-user"></i> </span>
+                        <input
+                        id="password"
+                        type="password"
+                        class="form-control"
+                        placeholder="Password"
+                        
+                        />                          
+                        
+            </div>
+            <div class="clear-fix">&nbsp;</div>
+                    <div class="input-group">
+                    <label class="form-label col-lg-2" for="cpassword">
+                        Confirm Password &nbsp;&nbsp;
+                    </label>
+                        <span class="input-group-text"><i class="fa fa-user"></i> </span>
+                        <input
+                        id="cpassword"
+                        type="password"
+                        class="form-control"
+                        placeholder="Confirm Password"
+                        />                          
+                        
+            </div>
+            
+            <div class="clear-fix">&nbsp;</div>
+                    <div class="input-group">
+                    <label class="form-label col-lg-2 text-right" for="email">
+                        Email &nbsp;&nbsp;
+                    </label>
+                        <span class="input-group-text"><i class="fa fa-envelope"></i> </span>
+                        <input
+                        id="email"
+                        type="email"
+                        class="form-control"
+                        placeholder="Email"
+                        aria-label="email"
+                        />                          
+                        
+            </div>
+            
+            <div class="clear-fix">&nbsp;</div>
+                    <div class="input-group">
+                    <label class="form-label col-lg-2 text-right" for="contactno">
+                        Contact No &nbsp;&nbsp;
+                    </label>
+                        <span class="input-group-text"><i class="fa fa-phone"></i> </span>
+                        <input
+                        id="contactno"
+                        type="text"
+                        class="form-control"
+                        placeholder="Contact no"
+                        aria-label="contactno"
+                        />                          
+                        
+                    </div>
+            
+                    
+                    
+                    
+                    
+                    <div class="clear-fix">&nbsp;</div>
+                    
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <div class="clear-fix">&nbsp;</div>
+                </form> 
+            </div>
+        </div>
+        
+        <!--<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        -->
+        
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+        
+        
+        
+        <script type="javascript/text">
+            /*// Example starter JavaScript for disabling form submissions if there are invalid fields
+                (() => {
+                'use strict';
+                
+                // Fetch all the forms we want to apply custom Bootstrap validation styles to
+                const forms = document.querySelectorAll('.needs-validation');
+                
+                // Loop over them and prevent submission
+                Array.prototype.slice.call(forms).forEach((form) => {
+                form.addEventListener('submit', (event) => {
+                if (!form.checkValidity()) {
+                event.preventDefault();
+                event.stopPropagation();
+                }
+                form.classList.add('was-validated');
+                }, false);
+                });
+                })();
+            */
+        </script>
+    </body>
+    </html>        
+2.
+CREATE (:Movie {title: "M1"})
+CREATE (:Movie {title: "M2"})
+CREATE (:Actor {name: "A1"})
+CREATE (:Actor {name: "A2"})
+CREATE (:Actor {name: "Shahrukh Khan"})
+CREATE (:Business {revenue: 1000000})
+CREATE (:Business {revenue: 1500000})
+CREATE (:Award {name: "Best Film"})
+CREATE (:Award {name: "Best Actor"})
+CREATE (:Award {name: "Best Director"})
+
+MATCH(a:Actor{name:"A1"})
+MATCH(m:Movie{title:"M1"})
+CREATE(a)-[:ACTED_IN]->(m)
+
+MATCH(a:Actor{name:"A2"})
+MATCH(m:Movie{title:"M1"})
+CREATE(a)-[:ACTED_IN]->(m)
+
+MATCH(a:Actor{name:"Shahrukh Khan"})
+MATCH(m:Movie{title:"M2"})
+CREATE(a)-[:ACTED_IN]->(m)
+
+MATCH(m:Movie{title:"M1"})
+MATCH(b:Business{revenue: 1000000})
+CREATE(m)-[:MADE_BUSINESS]->(b)
+
+MATCH(m:Movie{title:"M2"})
+MATCH(b:Business{revenue: 1500000})
+CREATE(m)-[:MADE_BUSINESS]->(b)
+
+MATCH(m:Movie{title:"M2"})
+MATCH(a:Award{name: "Best Film"})
+CREATE(m)-[:RECIVED_AWARD]->(a)
+
+MATCH(m:Movie{title:"M1"})
+MATCH(a:Award{name: "Best Actor" })
+CREATE(m)-[:RECIVED_AWARD]->(a)
+Bu
+MATCH(m:Movie{title:"M2"})
+MATCH(a:Award{name:"Best Director" })
+CREATE(m)-[:RECIVED_AWARD]->(a)
+
+QUERIES:
+1)MATCH (m:Movie)-[mb:MADE_BUSINESS]->(b:Business)
+RETURN m, mb, b
+ORDER BY b.revenue DESC
+LIMIT 1;
+2)MATCH (b:Actor)-[a:ACTED_IN]->(m:Movie)
+RETURN b,a,m;
+3)MATCH (a:Actor {name: "Shahrukh Khan"})-[:ACTED_IN]->(m:Movie)
+RETURN m.title;
+4)MATCH (m:Movie)-[ra:RECIVED_AWARD]->()
+WITH m, COUNT(ra) AS awardsCount
+WHERE awardsCount > 1
+RETURN m, awardsCount;

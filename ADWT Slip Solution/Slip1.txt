@@ -1,0 +1,83 @@
+Slip1
+
+Write the HTML5 code for generating the form as shown below. Apply the internal CSS to the following form to change the font size of the heading to 6pt and change the color to red and also change the background color to yellow. 
+Slip1
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF=8">
+        <meta name="viewport " content="width-device-width,inital-scale=1.0">
+        <title>Project Mangment</title>
+        <style>      
+            
+            .container{
+        max-width:300px;
+        margin:0 auto;
+        padding:20px;
+        background-color:yellow;
+        border-radius:5px;
+       
+
+    }
+    h1{
+        font-size: 24pt;
+        color:red;
+        text-align: center;
+    }
+            .button {
+  border: none;
+  color:blue;
+  padding: 4px 8px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 2px 2px;
+  cursor: pointer;
+}
+.success {background-color: #04AA6D;} /* Green */
+.primary {background-color: #2500ba;} /* Blue */
+        </style>
+    </head>
+    <body>
+        <h1>Project Managment</h1>
+        <div class="container">
+        
+        <label for="Project name">Project Name  </label>
+        <input id="pname" name="pname" value="pname"><br>
+        <label for="Assigned To">Assigned To</label>
+        <select id="teacher" name="teacher">
+            <option value="ABC">AbC</option>
+            <option value="XYZ">XYZ</option>
+            <option value="C">AC</option>
+        </select><br>
+        <label for="start date">Start Date</label>
+        <input type="date" value="start date"><br>
+        <label for="end date">End Date</label>
+        <input type="date" value="End date"><br>
+        <label for="Priority">Priority</label>
+        <input type="radio" value="high">High</input>
+        <input type="radio" value="Average">Average</input>
+        <input type="radio" value="Low">Low</input><br>
+        <label for="Description">Description</label>
+        <input type="textarea"><br>
+        <button type="button" class="button success">Submit</button>
+        <button type="button" class="button primary">Clear</button>
+    </div>
+    </body>
+</html>
+2.
+db.propertylist.insert({area:"Nashik",rate:200000,city:"Nashik",owner:[{name:"Mr.Patil",age:50}]})
+db.propertylist.insert({area:"FC",rate:150000,owner:[{name:"Mr.Patil",age:50}]})
+db.propertylist.insert({area:"Nashik",rate:100000,city:"Nashik",owner:[{name:"Mr.Jadhav",age:55}]})
+db.propertylist.insert({area:"Mumbai",rate:95000,city:"Mumbai",owner:[{name:"Mr.Roy",age:55}]})
+db.propertylist.insert({area:"Mumbai",rate:80000,city:"Mumbai",owner:[{name:"Mr. Patil",age:55}]})
+
+a)	Display area wise property details 
+`db.propertylist.find({}, { area: 1, rate: 1, _id: 0 })
+b) Display property owned by 'Mr. Patil' having minimum rate db.propertylist.find({"owner.name":"Mr.Patil"}).sort({"rate":1}).limit(1)
+c) Give the details of owner whose property is at "Nashik". 
+db.propertylist.find({area:"Nashik"})
+d) Display area of property whose rate is less than 100000.
+db.propertylist.find({rate:{$lt:100000}})
